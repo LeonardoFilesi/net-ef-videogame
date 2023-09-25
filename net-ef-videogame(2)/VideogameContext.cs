@@ -15,8 +15,7 @@ namespace net_ef_videogame_2_
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Data Source=localhost;Initial Catalog=EFVideoGameContext;" +
-            "Integrated Security=True;TrustServerCertificate=True");
+            optionsBuilder.UseSqlServer("Data Source=localhost;Integrated Security=True");
         }
     }
 }

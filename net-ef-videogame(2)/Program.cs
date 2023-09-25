@@ -1,4 +1,6 @@
-﻿namespace net_ef_videogame
+﻿using net_ef_videogame_2_;
+
+namespace net_ef_videogame
 {
     internal class Program
     {
@@ -13,7 +15,8 @@
 - 2: ricercare un videogioco per id
 - 3: ricercare tutti i videogiochi aventi il nome contenente una determinata stringa inserita in input
 - 4: cancellare un videogioco
-- 5: chiudere il programma
+- 5: inserire una nuova software house
+- 6: chiudere il programma
 ");
 
                 int selectedOption = int.Parse(Console.ReadLine());
@@ -109,6 +112,31 @@
                         }
 
                         break;
+
+                    // CREATE SOFTWAREHOUSE
+                    case 5:
+                        {
+                                        Console.WriteLine("Create a SoftwareHouse!");
+                                        Console.WriteLine("Enter the name: ");
+                                        string name = Console.ReadLine();
+                                        Console.WriteLine("Enter the country in which is located: ");
+                                        string country = Console.ReadLine();
+                                        Console.WriteLine("Enter software house id: ");
+                                        long softwareHouseId = long.Parse(Console.ReadLine());
+
+                                        SoftwareHouse softwareHouse = new SoftwareHouse(softwareHouseId, name, country);
+                                        bool inserted = VideogameManager.CreateSoftwareHouse(softwareHouse);
+
+                                        if (inserted)
+                                        {
+                                            Console.WriteLine("Game created and added to the list!");
+                                        }
+                                        else
+                                        {
+                                            Console.WriteLine("Game not created!");
+                                        }                  
+                                    break;
+                            }
                 }
             }
         }

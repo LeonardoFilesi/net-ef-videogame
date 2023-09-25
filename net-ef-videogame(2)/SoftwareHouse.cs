@@ -13,7 +13,15 @@ namespace net_ef_videogame_2_
         public string Country { get; set; }
 
 
-        //RELAZIONE 1 A MOLTI: MOLTI VG X 1 SH
+        //RELAZIONE 1 A MOLTI: MOLTI VIDEOGAME X 1 SOFTWAREHOUSE
         public List<Videogame> Videogames { get; set; }
+
+        // COSTRUTTORE
+        public SoftwareHouse(long softwareHouseId, string name, string country)
+        {
+            Name = name;
+            SoftwareHouseId = softwareHouseId;
+            Country = country;
+        }
     }
 }

@@ -13,11 +13,21 @@ namespace net_ef_videogame_2_
         public string Overview { get; set; }
         public DateTime ReleaseDate { get; set; }
 
-        //RELAZIONE MOLTI AD 1 UNA SH PER MOLTI VG 
+
+        //RELAZIONE MOLTI AD 1: UNA SOFTWAREHOUSE PER MOLTI VIDEOGAME 
 
         public long SoftwareHouseId { get; set; }
         public SoftwareHouse SoftwareHouse { get; set; }
 
+        // COSTRUTTORE
+        public Videogame(long id, string name, string overview, DateTime release_date, long softwareHouseId)
+        {
+            VideogameId = id;
+            Name = name;
+            Overview = overview;
+            ReleaseDate = release_date;
+            SoftwareHouseId = softwareHouseId;
+        }
 
         public override string ToString()
         {
